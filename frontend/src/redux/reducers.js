@@ -3,9 +3,6 @@ import {
   ADD_EMPLOYEE,
   REMOVE_EMPLOYEE,
   UPDATE_EMPLOYEE,
-  addEmployee,
-  removeEmployee,
-  updateEmployee
 } from './actions';
 
 

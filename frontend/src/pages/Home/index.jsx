@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeEmployee } from '../../redux/actions';
 import { useHistory } from 'react-router-dom';
-import './styles.css';
 
 
 const Home = () => {
@@ -69,12 +68,9 @@ const Home = () => {
     dispatch(removeEmployee(employee));
   }
 
-  useEffect(() => {
-    console.log(employees)
-  }, []);
 
   return (
-    <div>
+    <div id="main">
       <table>
         <thead>
           <tr>
@@ -96,16 +92,24 @@ const Home = () => {
               <td> R$ {employee.salary} </td>
               <td> R$ {employee.discount} </td>
               <td> {employee.dependents} </td>
-              <td> R$ </td>
               <td> R$
+            {
+              calculateBaseSalaryIr({
+                salary: employee.salary,
+                discount: employee.discount,
+                dependents: employee.dependents
+              }).toFixed(2)
+                }
+              </td>
+              <td> R$ 
               {
-                calculateDiscountIRRF({ 
-                  salary: employee.salary,
-                  discount: employee.discount,
-                  dependents: employee.dependents
-                }).toFixed(2)
-               }
-               </td>
+                  calculateDiscountIRRF({
+                    salary: employee.salary,
+                    discount: employee.discount,
+                    dependents: employee.dependents
+                  }).toFixed(2)
+                }
+              </td>
               <td>
                 <button onClick={() => handleEditEmployee(employee.id)}>Editar</button>
                 <button onClick={() => handleRemoveEmployee(employee)}>Remover</button>

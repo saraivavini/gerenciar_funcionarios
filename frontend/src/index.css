@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+}
+#main {
+  padding: 20px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+}
+
+header {
+  padding: 20px 10px;
+  background-color: #cecece;
+}
+
+a {
+  text-decoration: none;
+  margin: 10px;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+form {
+  padding: 20px;
+}
+
+input {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
